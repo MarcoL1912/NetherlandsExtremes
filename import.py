@@ -55,7 +55,7 @@ def doTranslate(column, targetLanguage, tmpTopic = True, lowerCase=True):
 
 def importTerms(maxImports=10, targetLanguage='de'):
     termsDF = pd.DataFrame(None)
-    gf = GeoReference()
+    gf = GeoReference(local=True)
 
     countriesForLanguage = gf.getCountriesNameByLanguage(targetLanguage)
     print(countriesForLanguage)
