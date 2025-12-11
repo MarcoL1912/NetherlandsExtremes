@@ -294,6 +294,10 @@ def inqRapidMicroTranslate3(results=[]):
             results.append(":no_entry: **Not** subscribed to Microsoft-Translator-3")
             addSubscribeMessageToResults(results, "Microsoft-Translator-3", "https://rapidapi.com/apiship-apiship-default/api/microsoft-translator-text-api3")
             return False
+          if('The API is unreachable, please contact the API provider'==jsonData['message']):
+            results.append(":no_entry: Microsoft-Translator-3 is unreachable")
+            return False
+          print(jsonData['message'])
         if (len(jsonData)>0):
           results.append(":white_check_mark: Microsoft-Translator-3 status fine")
           print(jsonData)
@@ -342,6 +346,7 @@ def inqRapidDeepTranslate1(results=[]):
             results.append(":no_entry: **Not** subscribed to Deep-Translate-1")
             addSubscribeMessageToResults(results, "Deep-Translate-1", "https://rapidapi.com/gatzuma/api/deep-translate1")
             return False
+          print(jsonData['message'])
         if ('data' in jsonData):
           results.append(":white_check_mark: Deep-Translate-1 status fine")
           if ('translations' in jsonData['data']):
